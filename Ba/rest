@@ -1,0 +1,20 @@
+#!/bin/bash
+# Data Samplings of beacons
+
+
+for run in {1..10}
+do
+        sudo iwlist scan | grep 'Address\|Frequency\|Quality\|ESSID' >> DataBeacons.txt
+        echo "Data"
+        sleep 0.01
+done
+
+lookForMac #
+rawSocket #
+socket.socket #
+AF_PACKET #Compatibility with linux 2.0 if not AF_INET
+SOCK_RAW #open a raw socket to access the IP protocol directly
+htons #function converts the unsigned short integer hostshort from host byte order to network byte order.
+rawSocket.bind #bind a socket to a local interface.
+	#assign the address specified by addr , sockfd and addrlen
+recvfrom # receive messages from socket recvfrom(sockfd, buf, len, flags, NULL, NULL)

@@ -1,0 +1,35 @@
+#!/usr/bin/python
+
+from select import select
+import socket
+from impacket import ImpactDecoder
+
+class Sniffer(object):
+    def __init__(self):
+        proto = socket.getprotobyname('tcp')
+        sock = socket.socket(socket.AF_INET, socket.SOCK_RAW, proto)
+        sock.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+        self.sockets = [sock]
+        self.decoder = ImpactDecoder.IPDecoder()
+        self.start()
+
+    def start(self):
+        """start the main loop"""
+        while len(self.sockets) > 0:
+            recv = select(self.sockets, [], [], 30)[0] # 30 sec timeout
+            if len(recv) > 0:
+                sck = recv[0]
+                packet = sck.recvfrom(5370)[0]
+                if len(packet) == 0:
+                    # socket closed remotely
+                    self.sockets.remove(sck)
+                    sck.close()
+                else:
+                    # packet received - decode
+                    packet = self.decoder.decode(packet)
+                    print packet
+
+
+
+
+

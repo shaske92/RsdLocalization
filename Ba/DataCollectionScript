@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+import socket 
+import time
+import os
+
+lookForMac = ''
+
+rawSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(0x0003))
+rawSocket.bind(("wlx0013ef3009c1", 0x0003))
+
+os.system("iwconfig wlx0013ef3009c1 channel 1")
+
+file=open("testScript.txt","w")
+#while True:
+for i in range(1,15):
+	theApMac_List=[]
+	count = 0
+	print i
+	while count < 2:
+		pkt = rawSocket.recvfrom(5370)[0]
+		os.system("iwconfig wlx0013ef3009c1 channel " +str(i))
+		if (pkt[18] == "\x80") :
+			frequency = int(pkt[11].encode('hex')+pkt[10].encode('hex'),16)
+			essid = pkt[56:56 +ord(pkt[55])]
+			mac = pkt[28:34].encode('hex')
+			signal = 256-int(ord(pkt[14]))
+			if mac in theApMac_List:
+				count = count+1
+				#break
+			else:
+				theApMac_List.append(mac)
+				print "Time: %s Mac: %s Frequency: %d Signal: %d ESSID: %s" % (time.strftime('%H:%M:%S'),mac, frequency, signal, essid)
+				file.write("Frequency: %d Time: %s Mac: %s Signal: %d ESSID: %s \n" % (frequency, time.strftime('%H:%M:%S'),mac, signal, essid))
+		else:
+			print "no data"
+			count = count+1
+			#break 
+		#os.system("iwconfig wlx0013ef3009c1 channel 3")	
+		 
+file.close()
+
+		 # file.write("Time: %s Mac: %s Signal: %d ESSID: %s" % (time.strftime('%H:%M:%S'),mac, signal, essid))
+                 # print "Time: %s Mac: %s Signal: %d ESSID: %s" % (time.strftime('%H:%M:%S'),mac, signal, essid)
+

@@ -1,0 +1,6 @@
+#! /bin/bash
+
+ sudo ifconfig wlx0013ef3009c1 down
+ sudo sudo service network-manager start 
+ sudo iwconfig wlx0013ef3009c1 mode managed
+ sudo ifconfig wlx0013ef3009c1 up

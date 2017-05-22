@@ -1,0 +1,6 @@
+#! /bin/bash
+
+sudo ifconfig wlx0013ef3009c1 down
+sudo service network-manager stop
+sudo iwconfig wlx0013ef3009c1 mode monitor
+sudo ifconfig wlx0013ef3009c1 up

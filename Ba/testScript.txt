@@ -1,0 +1,15 @@
+Frequency: 2437 Time: 10:29:37 Mac: c03f0e270aa8 Signal: 63 ESSID: Soeglimt 
+Frequency: 2437 Time: 10:29:37 Mac: 7c03d8cc2b10 Signal: 33 ESSID: HomeBox-2B0A 
+Frequency: 2437 Time: 10:29:37 Mac: c03f0e270aa8 Signal: 61 ESSID: Soeglimt 
+Frequency: 2417 Time: 10:29:37 Mac: 1c740dc97608 Signal: 61 ESSID: ZyXEL NBG-418N v2 
+Frequency: 2417 Time: 10:29:38 Mac: 1c740dc97608 Signal: 59 ESSID: ZyXEL NBG-418N v2 
+Frequency: 2422 Time: 10:29:43 Mac: 1c740dc97608 Signal: 57 ESSID: ZyXEL NBG-418N v2 
+Frequency: 2432 Time: 10:29:58 Mac: 4c9effa5b630 Signal: 65 ESSID: Saiuan 
+Frequency: 2437 Time: 10:29:58 Mac: c03f0e270aa8 Signal: 63 ESSID: Soeglimt 
+Frequency: 2437 Time: 10:29:58 Mac: 7c03d8cc2b10 Signal: 37 ESSID: HomeBox-2B0A 
+Frequency: 2437 Time: 10:29:58 Mac: c03f0e270aa8 Signal: 65 ESSID: Soeglimt 
+Frequency: 2442 Time: 10:29:59 Mac: 1c740dc97608 Signal: 35 ESSID: ZyXEL NBG-418N v2 
+Frequency: 2442 Time: 10:29:59 Mac: 1c740dc97608 Signal: 53 ESSID: ZyXEL NBG-418N v2 
+Frequency: 2462 Time: 10:30:04 Mac: a42b8ce56510 Signal: 85 ESSID: RasmusUhre 
+Frequency: 2467 Time: 10:30:06 Mac: 10da431c8fdb Signal: 71 ESSID: NETGEAR65 
+Frequency: 2472 Time: 10:30:07 Mac: 1c740dc97608 Signal: 67 ESSID: ZyXEL NBG-418N v2 
